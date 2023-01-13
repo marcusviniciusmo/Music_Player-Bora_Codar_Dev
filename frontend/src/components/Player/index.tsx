@@ -1,4 +1,5 @@
 import { PlayerFull } from "../PlayerFull";
+import { PlayerDefault } from "../PlayerDefault";
 
 export function Player() {
   return (
@@ -6,6 +7,8 @@ export function Player() {
       <h1>PLAYER Component</h1>
 
       <PlayerFull/>
+
+      <PlayerDefault />
     </>
   );
 };
