@@ -8,7 +8,7 @@ import ArrowNext from '../../assets/arrowNext.png';
 import { PlayerFull } from "../PlayerFull";
 import { PlayerDefault } from "../PlayerDefault";
 import { PlayerShort } from "../PlayerShort";
-import { Container } from "../../styles/Player";
+import * as Styles from "../../styles/Player";
 import { PlayerMocks } from "../../types/Player";
 
 export function Player() {
@@ -63,12 +63,22 @@ export function Player() {
   };
 
   return (
-    <>
-      <button value='full' onClick={showPlayer}>full version</button>
-      <button value='default' onClick={showPlayer}>default version</button>
-      <button value='short' onClick={showPlayer}>short version</button>
+    <Styles.Layout>
+      <Styles.Buttons>
+        <Styles.Button value='full' onClick={showPlayer}>
+          full version
+        </Styles.Button>
 
-      <Container>
+        <Styles.Button value='default' onClick={showPlayer}>
+          default version
+        </Styles.Button>
+
+        <Styles.Button value='short' onClick={showPlayer}>
+          short version
+        </Styles.Button>
+      </Styles.Buttons>
+
+      <Styles.Container>
         {
           idPlayer === 'full' &&
           <PlayerFull className={idPlayer} music={music} />
@@ -81,7 +91,7 @@ export function Player() {
           idPlayer === 'short' &&
           <PlayerShort className={idPlayer} music={music} />
         }
-      </Container>
-    </>
+      </Styles.Container>
+    </Styles.Layout>
   );
 };

@@ -1,5 +1,42 @@
 import styled from 'styled-components';
 
+export const Layout = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  position: absolute;
+  inset: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+`;
+
+export const Buttons = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+`;
+
+export const Button = styled.button`
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border: 0.5rem solid var(--border-color);
+  width: 20rem;
+  height: 6rem;
+  cursor: pointer;
+
+  &:hover {
+    font-weight: 700;
+  }
+`;
+
 export const Container = styled.div`
   border-block: 3rem solid var(--border-color);
   border-inline: 0.1rem solid var(--border-color);
@@ -40,6 +77,10 @@ export const Content = styled.div`
 
   &.short {
     height: 19.9rem;
+  }
+
+  &:hover {
+    box-shadow: 0.1rem 0.1rem 0.5rem var(--color-secondary);
   }
 `;
 
