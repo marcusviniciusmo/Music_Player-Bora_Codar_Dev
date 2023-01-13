@@ -1,5 +1,6 @@
 import { PlayerFull } from "../PlayerFull";
 import { PlayerDefault } from "../PlayerDefault";
+import { PlayerShort } from "../PlayerShort";
 
 export function Player() {
   return (
@@ -9,6 +10,8 @@ export function Player() {
       <PlayerFull/>
 
       <PlayerDefault />
+
+      <PlayerShort />
     </>
   );
 };
