@@ -35,8 +35,8 @@ export function Player() {
         }
       ],
       time: {
-        current: '03:20',
-        remain: '00:12'
+        current: 200,
+        remain: 12
       }
     }
   };

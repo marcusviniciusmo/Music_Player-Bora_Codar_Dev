@@ -18,8 +18,8 @@ export interface PlayerMocks {
       }
     ],
     time: {
-      current: string;
-      remain: string;
+      current: number;
+      remain: number;
     }
   }
 };

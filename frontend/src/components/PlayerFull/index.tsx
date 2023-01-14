@@ -1,7 +1,12 @@
+import { ConvertSecondsToMinutes } from '../../utils/Functions';
 import { PlayerProps } from '../../types/Player';
 import * as Styles from '../../styles/Player';
 
 export function PlayerFull(props: PlayerProps) {
+  const currentTime = props.music.musicInfo.time.current;
+  const remainTime = props.music.musicInfo.time.remain;
+  const totalTime = remainTime + currentTime;
+
   return (
     <Styles.Content className={props.className}>
       <Styles.Image src={props.music.musicInfo.image} />
@@ -30,14 +35,17 @@ export function PlayerFull(props: PlayerProps) {
       </Styles.Controls>
 
       <Styles.TrackTime>
-        <Styles.Progress />
+        <Styles.Progress
+          current={currentTime}
+          total={totalTime}
+        />
         <Styles.Time className={props.className}>
           <Styles.CurrentTime>
-            {props.music.musicInfo.time.current}
+            {ConvertSecondsToMinutes(props.music.musicInfo.time.current)}
           </Styles.CurrentTime>
 
           <Styles.RemainTime>
-            {props.music.musicInfo.time.remain}
+            {ConvertSecondsToMinutes(props.music.musicInfo.time.remain)}
           </Styles.RemainTime>
         </Styles.Time>
       </Styles.TrackTime>

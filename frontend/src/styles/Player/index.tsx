@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+type ProgressProps = {
+  current: number;
+  total: number;
+};
+
 export const Layout = styled.div`
   width: 80%;
   margin: 0 auto;
@@ -149,7 +154,7 @@ export const Next = styled.img`
 
 export const TrackTime = styled.div``;
 
-export const Progress = styled.div`
+export const Progress = styled.div<ProgressProps>`
   position: relative;
 
   &::before {
@@ -167,7 +172,7 @@ export const Progress = styled.div`
     content: '';
     background: var(--progress-music-color);
     border-radius: 1rem;
-    width: 80%;
+    width: calc(${(props) => props.current * 100 / props.total}%);
     height: 0.6rem;
     display: block;
     position: absolute;
